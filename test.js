@@ -12,6 +12,8 @@ var value = [
     10000000,
     100000000,
     1000000000,
+    10000.908,
+    1000000.2345
 ];
 console.log('Indian Formatted String');
 value.map(function (x) { return console.log(CurrencyUtility.getFormattedCurrencyString(x, CurrencyFormats.IndianFormat)); });

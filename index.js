@@ -17,7 +17,19 @@ var CurrencyUtility = /** @class */ (function () {
         }
     };
     CurrencyUtility.processFormat = function (value, currencyFormat) {
-        var charArray = value.toString().split('').reverse();
+
+        var charArray = [];
+        var decimalPart;
+        var nonDecimalPart;
+        var isDecimalValuesPresent = value.toString().includes('.');
+        if(isDecimalValuesPresent){
+            decimalPart = value.toString().split('.')[1];
+            nonDecimalPart= value.toString().split('.')[0];
+            charArray = nonDecimalPart.split('').reverse();
+        } else{
+            charArray = value.toString().split('').reverse();
+        }
+        
         var resultArray = [];
         var stepCounter = 0;
         for (var i = 0; i < charArray.length; i++) {
@@ -35,7 +47,9 @@ var CurrencyUtility = /** @class */ (function () {
         }
         if (resultArray[0] === ',')
             resultArray.shift();
-        return currencyFormat.currencySymbol + " " + resultArray.join('');
+
+        let resultingString = currencyFormat.currencySymbol + " " + resultArray.join('');    
+        return isDecimalValuesPresent? resultingString+'.'+decimalPart : resultingString;
     };
     return CurrencyUtility;
 }());
