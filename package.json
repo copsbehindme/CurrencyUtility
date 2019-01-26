@@ -1,0 +1,21 @@
+{
+  "name": "currencyutility",
+  "version": "1.0.2",
+  "description": "indian and international currency format representation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rupee",
+    "dollar",
+    "rupees",
+    "dollars",
+    "currency",
+    "currencyformat",
+    "currencyformatter",
+    "money representation"
+  ],
+  "author": "Rohit <heyrohit@live.com>",
+  "license": "ISC"
+}
